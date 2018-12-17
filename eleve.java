@@ -12,7 +12,7 @@ public eleve(String url, String user, String password,String variable) throws SQ
     java.sql.Statement state = connexion.createStatement();
 
     
-    ResultSet lecture = state.executeQuery( "SELECT eleve.Nom,Prenom,eleve.ID_Groupe,promotion.Nom,promotion.Id_Promotion  FROM eleve,groupe,promotion WHERE promotion.Id_Promotion=groupe.Id_Promotion AND groupe.ID_Groupe=eleve.ID_Groupe AND groupe.Nom='"+variable+ "';" );
+    ResultSet lecture = state.executeQuery( "SELECT eleve.Nom,Prenom,eleve.ID_Groupe,promotion.Nom,promotion.Id_Promotion  FROM eleve,groupe,promotion WHERE promotion.Id_Promotion=groupe.Id_Promotion AND groupe.ID_Groupe=eleve.ID_Groupe AND promotion.Nom='"+variable+ "';" );
     while ( lecture.next() ) {
 
         String Nom = lecture.getString( "eleve.Nom" );
